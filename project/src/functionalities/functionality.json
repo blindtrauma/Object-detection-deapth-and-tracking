@@ -1,0 +1,20 @@
+{
+    "commands": {
+        "AR screen Reading": {
+            "pattern": "\\b(screen reading|identify screen|identify display|find|display|sign|AR sign)\\b",
+            "function": "ar_sign_reading"
+        },
+        "Annotation from Experts": {
+            "pattern": "\\b(annotation|annotate|expert opinion|remote)\\b",
+            "function": "annotation_from_experts"
+        },
+        "QR / Barcode Scanner": {
+            "pattern": "\\b(scan|barcode|QR code)\\b",
+            "function": "qr_bar_code_scanner"
+        },
+        "AI Image Analysis and Summary": {
+            "pattern": "\\b(image analysis|summarize|analyze|image|photo)\\b",
+            "function": "ai_image_analysis_and_summary"
+        }
+    }
+}

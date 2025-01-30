@@ -1,0 +1,11 @@
+numpy==1.23.5
+torch==2.0.1   #NOTE:- torch will be installed as per the cuda version of the system example command for installation
+opencv-python-headless==4.8.0.76
+keyboard==0.13.5
+Pillow==10.0.0
+ultralytics==8.0.0
+SpeechRecognition==3.8.1
+PyAudio==0.2.11
+openai
+pyttsx3==2.90
+pydub==0.25.1
