@@ -226,7 +226,7 @@ To enable video input via WebSocket instead of a raw TCP socket, follow these st
 
 ## FINALLY INSTRUCTIONS AND PYTHON CODE TO RUN THE CODE,
 
-
+```python
 import cv2
 import asyncio
 import websockets
@@ -257,7 +257,7 @@ async def send_video(uri, video_source=0):
 if __name__ == "__main__":
     uri = "ws://localhost:8765"
     asyncio.run(send_video(uri, video_source=0))
-
+```
 
 THIS THIS PYTHON CODE TO SEND VIDEO TO THE URL BY RUNNING THIS ON YOUR TERMINAL AND ON THE OTHER TERMINAL RUN tracking_summary.py
 
