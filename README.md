@@ -222,3 +222,43 @@ To enable video input via WebSocket instead of a raw TCP socket, follow these st
 
 *For any issues or contributions, please open an issue or submit a pull request on the GitHub repository.*
 
+
+
+## FINALLY INSTRUCTIONS AND PYTHON CODE TO RUN THE CODE,
+
+
+import cv2
+import asyncio
+import websockets
+import struct
+
+async def send_video(uri, video_source=0):
+    cap = cv2.VideoCapture(video_source)
+    if not cap.isOpened():
+        print("Error: Unable to open video source.")
+        return
+    async with websockets.connect(uri) as websocket:
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                print("End of video stream or error reading frame.")
+                break
+            ret, buffer = cv2.imencode('.jpg', frame)
+            if not ret:
+                print("Error: Could not encode frame.")
+                continue
+            frame_data = buffer.tobytes()
+            header = struct.pack('>I', len(frame_data))
+            message = header + frame_data
+            await websocket.send(message)
+            await asyncio.sleep(1/30)
+        cap.release()
+
+if __name__ == "__main__":
+    uri = "ws://localhost:8765"
+    asyncio.run(send_video(uri, video_source=0))
+
+
+THIS THIS PYTHON CODE TO SEND VIDEO TO THE URL BY RUNNING THIS ON YOUR TERMINAL AND ON THE OTHER TERMINAL RUN tracking_summary.py
+
+
