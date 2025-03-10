@@ -16,6 +16,7 @@ This project is a sophisticated real-time video processing pipeline that integra
 - [Using WebSocket for Video Input](#using-websocket-for-video-input)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
+- [Instructions to Run the Code]
 
 ---
 
